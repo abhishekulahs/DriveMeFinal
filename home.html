@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Drive Me - Hire professional drivers anytime, anywhere.">
+    <meta name="keywords" content="drivers, hire, transportation, services">
+    <title>Drive Me - Hire Professional Drivers Anytime, Anywhere</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(car.jpg);
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        header {
+            background: linear-gradient(135deg, orangered, #00CFFF);
+            padding: 20px;
+            color: white;
+        }
+
+        .navbar h1 {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .navbar nav {
+            display: inline-block;
+            float: right;
+        }
+        .navbar img {
+            margin-left: 37px;
+            margin-bottom: -7px;
+            border-radius: 50%;
+        }
+
+        .navbar nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .navbar nav a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .banner {
+            background-image: url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgb(248, 136, 136);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, orangered, #00CFFF);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+
+        
+        .search-form {
+            margin-top: 20px;
+        }
+
+        #search-box {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-form button {
+            padding: 10px;
+            background: linear-gradient(135deg, orangered, #00CFFF);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-form button:hover {
+            background-color: #1c2a38;
+        }
+
+ 
+        .highlights {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .highlights h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .highlight-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            width: 200px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .highlight-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px ;
+            margin-left: -15px;
+            background: linear-gradient(135deg, rgb(194, 183, 180), #9dcfdb);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease; 
+        }
+
+        .stat-item img:hover {
+            transform: scale(1.1); 
+        }
+
+        .stat-item h2 {
+            margin: 10px 0;
+            font-size: 2rem;
+            color: #ffda00; 
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: #cfd8e3;
+        }
+        #abhi23 {
+            color: #1c2a38;
+        }
+
+
+        footer {
+            background: linear-gradient(135deg, orangered, #00CFFF);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-links a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin-right: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .stats-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+                 <img src="./logodrive.jpg.jpeg" alt="Drive Me Logo" style="height: 50px; vertical-align: middle;"><br>
+                <h1>Drive Me</h1>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="safety.html">About Us</a>
+                <a href="availablenormal.html">Available Drivers</a>
+                <a href="becomedriver.html">Become a Driver</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="signup.html">Sign Up</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Hire Professional Drivers Anytime, Anywhere</h2>
+            <a href="bookingdriver.html" class="cta-button">Book a Driver Now</a>
+            <form class="search-form" id="search-form">
+                <input type="text" placeholder="Enter your city or zip code" id="search-box">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <section class="highlights">
+        <h3>Our Services</h3>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <h4>Reliable Drivers</h4>
+                <p>All our drivers are thoroughly vetted and trained.</p>
+            </div>
+            <div class="highlight-item">
+                <h4>Affordable Rates</h4>
+                <p>We offer competitive rates to ensure you get value for money.</p>
+            </div>
+            <div class="highlight-item">
+                <h4>Flexible Timings</h4>
+                <p>Book drivers according to your schedule, any time, any day.</p>
+            </div>
+            <div class="highlight-item">
+                <h4>Background-Checked</h4>
+                <p>All our drivers go through comprehensive background checks.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="stats-section">
+            <div class="stat-item">
+                <img src="./CARlogo1.jpeg" height="50" width="50" alt="Movements carried out">
+                <h2>+1,000,000</h2>
+                <p id="abhi23">Movements carried out</p>
+            </div>
+
+            <div class="stat-item">
+                <img src="./satisfaction.jpeg" height="50" width="50" alt="Satisfaction Icon">
+                <h2>98%</h2>
+                <p id="abhi23">Customer satisfaction rate</p>
+            </div>
+
+            <div class="stat-item">
+                <img src="./client11.jpeg" height="50" width="50" alt="Clients Icon">
+                <h2>+150,000</h2>
+                <p id="abhi23">Clients</p>
+            </div>
+
+            <div class="stat-item">
+                <img src="./countries.jpeg" height="50" width="50" alt="Globe Icon">
+                <h2>9 countries</h2>
+                <p id="abhi23">International presence</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="./fblogo.jpeg" alt="Facebook" style="width: 24px; height: 24px;">
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                <img src="./twilogo.jpeg" alt="Twitter" style="width: 24px; height: 24px;">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="./instalogo.jpeg" alt="Instagram" style="width: 24px; height: 24px;">
+            </a>
+        </div>
+        <p>&copy; 2024 Drive Me.</p>
+    </footer>
+</body>
+</html>

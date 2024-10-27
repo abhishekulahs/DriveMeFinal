@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment & QR Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        .qr-code {
+            margin-top: 20px;
+        }
+
+        .qr-code img {
+            max-width: 100%;
+        }
+
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Generate QR Code</h2>
+        <input type="text" id="qr-input" placeholder="Enter text or code">
+        <button id="generate-button"><a href="bookingconform.html">Generate QR Code</a></button>
+        <div class="qr-code" id="qr-code-container" style="display: none;">
+            <h3>Your QR Code:</h3>
+            <img id="qr-image" alt="Generated QR Code">
+        </div>
+
+        <h2>UPI Payment</h2>
+        <div class="error" id="error-message"></div>
+        <label for="upi-id">UPI ID:</label>
+        <input type="text" id="upi-id" placeholder="example@upi">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+        <button id="pay-button"> <a href="bookingconform.html">Pay with UPI</a></button>
+    </div>
+
+    <script>
+        document.getElementById('generate-button').onclick = function() {
+            var input = document.getElementById('qr-input').value.trim();
+            var qrImage = document.getElementById('qr-image');
+            var qrCodeContainer = document.getElementById('qr-code-container');
+
+            if (input !== "") {
+                // Generate QR code using the QR Code API
+                qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + encodeURIComponent(input) + "&size=200x200";
+                qrCodeContainer.style.display = 'block';
+            } else {
+                alert("Please enter a value to generate a QR code.");
+            }
+        };
+
+        document.getElementById('pay-button').onclick = function() {
+            var upiId = document.getElementById('upi-id').value.trim();
+            var amount = document.getElementById('amount').value.trim();
+            var errorMessage = document.getElementById('error-message');
+
+            errorMessage.textContent = "";
+
+            if (upiId === "" || amount === "") {
+                errorMessage.textContent = "Please fill in all fields.";
+            } else if (!validateUPI(upiId)) {
+                errorMessage.textContent = "Invalid UPI ID format.";
+            } else {
+                alert("Redirecting to UPI app to pay " + amount + " using UPI ID: " + upiId);
+            }
+        };
+
+        function validateUPI(upiId) {
+            var re = /^[a-zA-Z0-9.\-_]{2,}@[a-zA-Z]{2,}$/;
+            return re.test(upiId);
+        }
+    </script>
+</body>
+</html>
